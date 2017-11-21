@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/side_nav_bar"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="itptitpart3.anony1412.itptit.itptit_part3.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <ScrollView
+        android:id="@+id/scrollView_contentMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="8dp">
+            <TextView
+                android:id="@+id/txt_contentmain1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="      IT PTIT club (IT) - câu lạc bộ trực thuộc và lớn mạnh của khoa CNTT1 Học viện Công nghệ Bưu chính Viễn thông, được sự hỗ trợ trực tiếp từ các thầy cô trong khoa cùng với tập thể sinh viên của khối ngành kĩ thuật nhiệt tình, tâm huyết. IT là câu lạc bộ của những con người có “một cái đầu lạnh và một trái tim nóng”, là nơi hội tụ những tài năng sáng giá nhất của Học viện."
+                android:textSize="18sp"
+                android:scrollbars="vertical" />
+            <TextView
+                android:id="@+id/txt_contentmain2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="      Với mục tiêu giúp các bạn sinh viên tiếp cận sớm với ngôn ngữ lập trình, nâng cao khả năng lập trình và là lực lượng chủ chốt cho các cuộc thi lớn của Học viện như Olympic tin học, sinh viên với an toàn thông tin, ACM/ICPC…, IT club sẽ là sự lựa chọn tốt nhất cho những ai đam mê công nghệ và muốn phát triển khả năng của chính mình."
+                android:textSize="18sp"
+                android:scrollbars="vertical"/>
+
+            <VideoView
+                android:id="@+id/videoView_contentmain"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
