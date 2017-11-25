@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/side_nav_bar"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hpbd"/>
+
+    <TextView
+        android:id="@+id/txt_hpbd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="Happy Birthday ITPTIT Club 4th years old"
+        android:textSize="30sp"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

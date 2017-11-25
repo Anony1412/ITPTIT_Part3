@@ -1,12 +1,13 @@
 package itptitpart3.anony1412.itptit.itptit_part3;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,14 +20,22 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.SubMenu;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import itptitpart3.anony1412.itptit.itptit_part3.events.EventsActivity;
+import itptitpart3.anony1412.itptit.itptit_part3.gallery.GallaryActivity;
+import itptitpart3.anony1412.itptit.itptit_part3.members.MemberActivity;
+import itptitpart3.anony1412.itptit.itptit_part3.training_creature.TrainingActivity;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private VideoView videoView;
+    private ImageView img_PlayYoutube;
+
     private TextView txt_contentmain1;
     private TextView txt_contentmain2;
 
@@ -34,19 +43,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private ScrollView scrollView_contentMain;
 
+    private boolean isPlaying;
+
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        // Write a message to the database
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference myRef = database.getReference("message");
+//
+//        myRef.setValue("Hello, World!");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setImageResource(R.drawable.facebook_messenger);
+        fab.setBackgroundColor(R.color.white);
+        fab.setBackgroundTintList(ColorStateList.valueOf(R.color.pink100));
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Uri uri = Uri.parse("https://www.facebook.com/messages/t/ITPTIT"); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+
             }
         });
 
@@ -59,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        isPlaying = false;
         init();
         changeFontsNavigation();
         setCrollViewOnTop();
@@ -83,20 +110,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         txt_contentmain2.setTypeface(myFont);
 
         // set link local for videoView in homePage
+
         videoView = findViewById(R.id.videoView_contentmain);
         String path = "android.resource://" + getPackageName() + "/" + R.raw.video;
         videoView.setVideoURI(Uri.parse(path));
 
-        final boolean[] isPlaying = {false};
+        img_PlayYoutube = findViewById(R.id.img_buttonPlayYoutube);
+        img_PlayYoutube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isPlaying == false) {
+                    img_PlayYoutube.setVisibility(View.GONE);
+                    videoView.resume();
+                    videoView.start();
+                    isPlaying = true;
+                }
+            }
+        });
+
         videoView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if (!isPlaying[0]) {
-                    videoView.start();
-                    isPlaying[0] = true;
-                } else {
+                if (isPlaying == true) {
                     videoView.stopPlayback();
-                    isPlaying[0] = false;
+                    img_PlayYoutube.setVisibility(View.VISIBLE);
+                    isPlaying = false;
                 }
                 return false;
             }
@@ -177,16 +215,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(getApplicationContext(), GallaryActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.nav_training) {
+            Intent intent = new Intent(MainActivity.this, TrainingActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_events) {
-
+            Intent intent = new Intent(MainActivity.this, EventsActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_facebook) {
-
+            Uri uri = Uri.parse("https://www.facebook.com/ITPTIT/"); // missing 'http://' will cause crashed
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
         } else if (id == R.id.nav_gmail) {
-
+            Uri uri = Uri.parse("https://clb.it.ptit@gmail.com/"); // missing 'http://' will cause crashed
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
         } else if (id == R.id.nav_website) {
-
+            Uri uri = Uri.parse("https://www.itptit.com/"); // missing 'http://' will cause crashed
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

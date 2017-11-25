@@ -13,7 +13,7 @@
             android:icon="@drawable/gallery"
             android:title="Gallery" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_training"
             android:icon="@drawable/icons8classroom50"
             android:title="Training Creature" />
         <item

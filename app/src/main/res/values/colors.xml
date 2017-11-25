@@ -8,6 +8,9 @@
     <color name="lightBlue100">#B3E5FC</color>
     <color name="gray">#455A64</color>
     <color name="white">#ffffff</color>
+    <color name="blue">#0011ff</color>
+    <color name="whiteee">#e1d7d7</color>
+    <color name="red">#ff0000</color>
     <color name="gray200">#EEEEEE</color>
     <color name="blueGray400">#78909C</color>
     <color name="orange300">#FFB74D</color>
@@ -18,4 +21,11 @@
     <color name="amber600">#FFB300</color>
     <color name="orange800">#EF6C00</color>
     <color name="pink100">#F8BBD0</color>
+    <color name="black">#000000</color>
+    <color name="violet">#bfea00ff</color>
+    <color name="cyan100">#B2EBF2</color>
+    <color name="cyan200">#80DEEA</color>
+    <color name="cyan300">#4DD0E1</color>
+    <color name="cyan400">#26C6DA</color>
+    <color name="cyan500">#00BCD4</color>
 </resources>

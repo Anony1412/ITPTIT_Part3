@@ -15,22 +15,33 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity android:name=".MainActivity"></activity>-->
-        <activity android:name=".GallaryActivity"></activity>
-        <activity android:name=".MemberActivity"></activity>
-        <activity android:name=".activitys.BirthdayActivity"></activity>
-        <activity android:name=".activitys.BigGameActivity"></activity>
-        <activity android:name=".activitys.TuyenThanhVienActivity"></activity>
-        <activity android:name=".activitys.MrAndMrsActivity"></activity>
-        <activity android:name=".activitys.OtherImageActivity"></activity>
+        <activity android:name=".FirstScreenActivity"/>
+        <activity android:name=".gallery.GallaryActivity"/>
+        <activity android:name=".gallery.biggame.BigGameActivity"/>
+        <activity android:name=".gallery.birthday.BirthdayActivity"/>
+        <activity android:name=".gallery.tuyenthanhvien.TuyenThanhVienActivity"/>
+        <activity android:name=".gallery.mrandmrs.MrAndMrsActivity"/>
+        <activity android:name=".gallery.other.OtherImageActivity"/>
+        <activity android:name=".members.MemberActivity"/>
+        <activity android:name=".gallery.birthday.BirthdayViewPagerActivity"/>
+        <activity android:name=".gallery.biggame.BiggameViewPagerActivity"/>
+        <activity android:name=".gallery.tuyenthanhvien.TuyenThanhVienViewPagerActivity"/>
+        <activity android:name=".gallery.mrandmrs.MrAndMrsViewPagerActivity"/>
+        <activity android:name=".gallery.other.OtherImageViewPagerActivity"/>
+        <activity android:name=".training_creature.TrainingActivity"/>
+        <activity android:name=".events.EventsActivity"/>
+        <activity android:name=".members.member_d16.D16Activity"/>
+        <activity android:name=".members.member_d15.D15Activity"/>
+        <activity android:name=".members.member_d14.D14Activity"/>
+        <activity android:name=".members.member_d13.D13Activity"/>
+        <activity android:name=".members.member_d12.D12Activity"/>
     </application>
 
 </manifest>

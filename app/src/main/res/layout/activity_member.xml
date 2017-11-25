@@ -28,5 +28,16 @@
         android:layout_width="match_parent"
         android:layout_height="24dp"
         android:background="@color/amber200">
+        <TextView
+            android:id="@+id/txt_membersITPTITClub"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Members ITPTIT Club"
+            android:textStyle="italic"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
     </RelativeLayout>
+
+    <include layout="@layout/scroll_members"/>
 </LinearLayout>

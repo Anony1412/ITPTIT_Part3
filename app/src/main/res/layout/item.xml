@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="150dp"
+    android:layout_height="200dp"
+    android:padding="4dp"
+    android:gravity="center"
+    android:background="@drawable/shape_rec_item"
+    xmlns:app1="http://schemas.android.com/apk/res-auto"
+    tools:ignore="ResAuto">
 
-    <ImageView
-        android:id="@+id/img_Member"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:padding="4dp"
+        android:background="@drawable/shape_nav_bar_2">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_Member"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/photo"
+            app1:civ_border_color="#bfea00ff"
+            app1:civ_border_width="2dp"/>
+
+        <TextView
+            android:id="@+id/txt_nameMemberFirst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:text="memberName"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/red"
+            android:layout_marginBottom="8dp"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+</RelativeLayout>

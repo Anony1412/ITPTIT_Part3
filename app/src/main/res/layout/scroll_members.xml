@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/side_nav_bar"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="250dp"
+            android:background="@color/cyan100"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txt_D12"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:text="D12"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+
+            <HorizontalScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentBottom="true">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView_memberD12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="horizontal"></android.support.v7.widget.RecyclerView>
+
+            </HorizontalScrollView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="250dp"
+            android:background="@color/cyan200">
+
+            <TextView
+                android:id="@+id/txt_D13"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D13"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+
+            <HorizontalScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentBottom="true">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView_memberD13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="horizontal"></android.support.v7.widget.RecyclerView>
+            </HorizontalScrollView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="250dp"
+            android:background="@color/cyan300">
+
+            <TextView
+                android:id="@+id/txt_D14"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D14"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+
+            <HorizontalScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentBottom="true">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView_memberD14"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="horizontal"></android.support.v7.widget.RecyclerView>
+            </HorizontalScrollView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="250dp"
+            android:background="@color/cyan400">
+
+            <TextView
+                android:id="@+id/txt_D15"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D15"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+
+            <HorizontalScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentBottom="true">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView_memberD15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="horizontal"></android.support.v7.widget.RecyclerView>
+            </HorizontalScrollView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="250dp"
+            android:background="@color/cyan500">
+
+            <TextView
+                android:id="@+id/txt_D16"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D16"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+
+            <HorizontalScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentBottom="true">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView_memberD16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="horizontal"></android.support.v7.widget.RecyclerView>
+            </HorizontalScrollView>
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

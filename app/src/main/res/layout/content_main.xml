@@ -33,16 +33,26 @@
                 android:text="      Với mục tiêu giúp các bạn sinh viên tiếp cận sớm với ngôn ngữ lập trình, nâng cao khả năng lập trình và là lực lượng chủ chốt cho các cuộc thi lớn của Học viện như Olympic tin học, sinh viên với an toàn thông tin, ACM/ICPC…, IT club sẽ là sự lựa chọn tốt nhất cho những ai đam mê công nghệ và muốn phát triển khả năng của chính mình."
                 android:textSize="18sp"
                 android:scrollbars="vertical"/>
-
-            <VideoView
-                android:id="@+id/videoView_contentmain"
+            <RelativeLayout
                 android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="24dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp" />
+                android:background="#000000">
+
+                <VideoView
+                    android:id="@+id/videoView_contentmain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"/>
+
+                <ImageView
+                    android:id="@+id/img_buttonPlayYoutube"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/play_video_1" />
+            </RelativeLayout>
+
         </LinearLayout>
     </ScrollView>
 
