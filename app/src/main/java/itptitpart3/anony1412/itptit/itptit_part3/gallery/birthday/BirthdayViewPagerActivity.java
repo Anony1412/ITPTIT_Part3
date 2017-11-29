@@ -1,5 +1,6 @@
 package itptitpart3.anony1412.itptit.itptit_part3.gallery.birthday;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
@@ -23,6 +24,7 @@ public class BirthdayViewPagerActivity extends AppCompatActivity implements View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewpager);
         init();
+        viewPager.setCurrentItem(getPosition());
     }
 
     private void init() {
@@ -32,6 +34,13 @@ public class BirthdayViewPagerActivity extends AppCompatActivity implements View
         indicator = findViewById(R.id.circleindicator);
         indicator.setViewPager(viewPager);
         viewPager.addOnPageChangeListener(this);
+    }
+
+    private int getPosition(){
+        Intent intent = this.getIntent();
+        Bundle bundle = intent.getExtras();
+        int position = bundle.getInt("position");
+        return position;
     }
 
     @Override

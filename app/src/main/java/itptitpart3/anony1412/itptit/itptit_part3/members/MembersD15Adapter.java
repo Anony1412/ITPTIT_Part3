@@ -55,6 +55,7 @@ public class MembersD15Adapter extends RecyclerView.Adapter<MembersD15Adapter.Vi
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, D15Activity.class);
+                intent.putExtra("position", position);
                 context.startActivity(intent);
             }
         });

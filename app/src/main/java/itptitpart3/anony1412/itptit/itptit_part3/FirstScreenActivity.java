@@ -53,7 +53,7 @@ public class FirstScreenActivity extends AppCompatActivity {
                 linearLayout.setVisibility(View.GONE);
                 Animation animation1 = AnimationUtils.loadAnimation(FirstScreenActivity.this, R.anim.anim_alpha_item);
                 img_itptit.setAnimation(animation1);
-                img_itptit.setImageResource(R.drawable.itptit);
+                img_itptit.setImageResource(R.drawable.abc);
                 animation1.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {

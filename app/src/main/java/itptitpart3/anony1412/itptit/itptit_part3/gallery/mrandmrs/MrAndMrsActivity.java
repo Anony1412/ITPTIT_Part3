@@ -46,6 +46,7 @@ public class MrAndMrsActivity extends AppCompatActivity implements AdapterView.O
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(MrAndMrsActivity.this, MrAndMrsViewPagerActivity.class);
+        intent.putExtra("position", position);
         startActivity(intent);
     }
 }

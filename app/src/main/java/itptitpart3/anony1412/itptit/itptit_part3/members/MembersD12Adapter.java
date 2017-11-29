@@ -49,11 +49,12 @@ public class MembersD12Adapter extends RecyclerView.Adapter<MembersD12Adapter.Vi
         final Member member = members.get(position);
         Picasso.with(context).load(member.getUrls()).resize(200, 200).centerCrop().into(holder.img);
         holder.txt_name.setText(member.getMemberName());
-        // xóa item khi click
+        //
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, D12Activity.class);
+                intent.putExtra("position", position);
                 context.startActivity(intent);
             }
         });

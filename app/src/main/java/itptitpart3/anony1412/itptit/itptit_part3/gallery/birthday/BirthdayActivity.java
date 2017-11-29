@@ -43,6 +43,7 @@ public class BirthdayActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(BirthdayActivity.this, BirthdayViewPagerActivity.class);
+                intent.putExtra("position", position);
                 startActivity(intent);
             }
         });

@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FirstScreenActivity"/>
+        <!--<activity android:name=".MainActivity"/>-->
         <activity android:name=".gallery.GallaryActivity"/>
         <activity android:name=".gallery.biggame.BigGameActivity"/>
         <activity android:name=".gallery.birthday.BirthdayActivity"/>
@@ -42,6 +42,9 @@
         <activity android:name=".members.member_d14.D14Activity"/>
         <activity android:name=".members.member_d13.D13Activity"/>
         <activity android:name=".members.member_d12.D12Activity"/>
+        <activity android:name=".itptitfacebook.ITPTITFacebook"/>
+        <activity android:name=".itptitgmail.ITPTITGmail"/>
+        <activity android:name=".itptitweb.ITPTITWeb"/>
     </application>
 
 </manifest>

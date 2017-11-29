@@ -45,6 +45,7 @@ public class TuyenThanhVienActivity extends AppCompatActivity implements Adapter
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(TuyenThanhVienActivity.this, TuyenThanhVienViewPagerActivity.class);
+        intent.putExtra("position", position);
         startActivity(intent);
     }
 }

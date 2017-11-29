@@ -48,6 +48,7 @@ public class OtherImageActivity extends AppCompatActivity implements AdapterView
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(OtherImageActivity.this, OtherImageViewPagerActivity.class);
+        intent.putExtra("position", position);
         startActivity(intent);
     }
 }

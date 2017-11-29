@@ -2,7 +2,6 @@ package itptitpart3.anony1412.itptit.itptit_part3;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,8 +25,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.google.firebase.database.DatabaseReference;
+
 import itptitpart3.anony1412.itptit.itptit_part3.events.EventsActivity;
 import itptitpart3.anony1412.itptit.itptit_part3.gallery.GallaryActivity;
+import itptitpart3.anony1412.itptit.itptit_part3.itptitfacebook.ITPTITFacebook;
+import itptitpart3.anony1412.itptit.itptit_part3.itptitgmail.ITPTITGmail;
+import itptitpart3.anony1412.itptit.itptit_part3.itptitweb.ITPTITWeb;
 import itptitpart3.anony1412.itptit.itptit_part3.members.MemberActivity;
 import itptitpart3.anony1412.itptit.itptit_part3.training_creature.TrainingActivity;
 
@@ -44,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ScrollView scrollView_contentMain;
 
     private boolean isPlaying;
+
+    private DatabaseReference mData;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -62,14 +68,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setImageResource(R.drawable.facebook_messenger);
-        fab.setBackgroundColor(R.color.white);
-        fab.setBackgroundTintList(ColorStateList.valueOf(R.color.pink100));
+//        fab.setBackgroundColor(R.color.white);
+//        fab.setBackgroundTintList(ColorDrawable.);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("https://www.facebook.com/messages/t/ITPTIT"); // missing 'http://' will cause crashed
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                Intent intent = new Intent(getApplication(), ITPTITFacebook.class);
                 startActivity(intent);
+//                String urls = "https://www.facebook.com/messages/t/ITPTIT";
+//                wvMain.getSettings().setJavaScriptEnabled(true);
+//                wvMain.loadUrl(urls);
+//                Uri uri = Uri.parse("https://www.facebook.com/messages/t/ITPTIT"); // missing 'http://' will cause crashed
+//                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+//                startActivity(intent);
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
 
@@ -222,16 +233,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(MainActivity.this, EventsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_facebook) {
-            Uri uri = Uri.parse("https://www.facebook.com/ITPTIT/"); // missing 'http://' will cause crashed
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            Intent intent = new Intent(this, ITPTITFacebook.class);
             startActivity(intent);
         } else if (id == R.id.nav_gmail) {
-            Uri uri = Uri.parse("https://clb.it.ptit@gmail.com/"); // missing 'http://' will cause crashed
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            Intent intent = new Intent(this, ITPTITGmail.class);
             startActivity(intent);
+//            Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "clb.it.ptit@gmail.com", null));
+//            startActivity(Intent.createChooser(intent, "Send Email:..."));
         } else if (id == R.id.nav_website) {
-            Uri uri = Uri.parse("https://www.itptit.com/"); // missing 'http://' will cause crashed
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            Intent intent = new Intent(this, ITPTITWeb.class);
             startActivity(intent);
         }
 

@@ -54,6 +54,7 @@ public class GirdViewAdapter extends BaseAdapter {
         Picasso.with(context)
                 .load(items[position])
                 .resize(150, 150)
+                .centerCrop()
                 .into(imageView);
         return convertView;
     }
