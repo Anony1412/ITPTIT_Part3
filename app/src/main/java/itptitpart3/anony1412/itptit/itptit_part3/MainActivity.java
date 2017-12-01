@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ScrollView scrollView_contentMain;
 
     private boolean isPlaying;
+    private boolean showHide = false;
 
     private DatabaseReference mData;
 
@@ -67,23 +68,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setImageResource(R.drawable.facebook_messenger);
-//        fab.setBackgroundColor(R.color.white);
-//        fab.setBackgroundTintList(ColorDrawable.);
+        final FloatingActionButton fab_messenger = findViewById(R.id.fab_facebook);
+        final FloatingActionButton fab_gmail = findViewById(R.id.fab_gmail);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), ITPTITFacebook.class);
-                startActivity(intent);
-//                String urls = "https://www.facebook.com/messages/t/ITPTIT";
-//                wvMain.getSettings().setJavaScriptEnabled(true);
-//                wvMain.loadUrl(urls);
-//                Uri uri = Uri.parse("https://www.facebook.com/messages/t/ITPTIT"); // missing 'http://' will cause crashed
-//                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-//                startActivity(intent);
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
+                if (showHide == false) {
+                    showFab();
+                    showHide = true;
+                } else {
+                    hideFab();
+                    showHide = false;
+                }
 
+            }
+
+            private void hideFab() {
+                fab_messenger.hide();
+                fab_gmail.hide();
+            }
+
+            private void showFab() {
+                fab_messenger.show();
+                fab_gmail.show();
+            }
+        });
+
+        fab_messenger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ITPTITFacebook.class);
+                startActivity(intent);
+            }
+        });
+
+        fab_gmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ITPTITGmail.class);
+                startActivity(intent);
             }
         });
 
@@ -101,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         changeFontsNavigation();
         setCrollViewOnTop();
     }
+
 
     private void setCrollViewOnTop() {
         scrollView_contentMain = findViewById(R.id.scrollView_contentMain);
